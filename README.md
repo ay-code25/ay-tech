@@ -57,6 +57,47 @@ Give it a try and see how it can transform your web development experience. Than
    git clone https://github.com/amazeeio/lagoon.git
    cd lagoon
    ```
+ #  trouble shoting
+   If you're encountering a permissions issue when trying to clone the `lagoon` repository from GitHub. This happens when your current user doesn't have the necessary rights to create directories or write in the location where you're attempting to clone the repository.
+
+Here’s how you can fix it:
+
+1. **Check the current directory's permissions**:  
+   The issue could be that the directory where you're trying to clone the repository doesn't allow you to create new files or folders.
+
+   - Check your current directory with the command:
+     ```
+     pwd
+     ```
+     This will tell you where you're currently located.
+
+2. **Switch to a directory where you have write access**:  
+   Try cloning the repository into a directory where you have permission to create files. For example, your home directory:
+   ```
+   cd ~
+   git clone https://github.com/amazeeio/lagoon.git
+   ```
+
+3. **Use `sudo` for superuser permissions**:  
+   If you need to clone the repository into a location that requires elevated permissions, you can prepend the `git clone` command with `sudo`. But be cautious when using `sudo`—make sure you understand the implications of running commands as a superuser.
+   ```
+   sudo git clone https://github.com/amazeeio/lagoon.git
+   ```
+
+4. **Check disk space**:  
+   Ensure that you have enough space on your system to clone the repository. You can check available disk space with:
+   ```
+   df -h
+   ```
+
+5. **Check user permissions**:  
+   You can verify if your user has proper permissions to the target directory with:
+   ```
+   ls -ld .
+   ```
+   This will show you who has read, write, and execute permissions on the current directory.
+
+Try one or more of these approaches and let me know if the issue persists!
 
 2. **Configure Your Project (ay-tech)**:
    - In the Lagoon directory, create a folder for your project "ay-tech". Lagoon uses Docker Compose files for configuration.
